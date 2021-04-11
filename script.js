@@ -15,4 +15,22 @@ $(document).ready(function(){
     console.log(currentTime);
     
     
-    
+    $('.HourRow').each(function(i) {
+        console.log(timeArray.indexOf(currentTime));
+        if (timeArray.indexOf(currentTime) > i) {
+          $(`#${i}`).addClass('past');
+          $(`#saveToDo-${i}`).prop('disabled', true);
+          $(`#saveToDo-${i}`).addClass('past');
+          $(`#hour-${i}`).addClass('past');
+        } else if (timeArray.indexOf(currentTime) == i) {
+          $(`#${i}`).addClass('present');
+          $(`#saveToDo-${i}`).addClass('present');
+          $(`#saveToDo-${i}`).prop('disabled', false);
+          $(`#hour-${i}`).addClass('present');
+        } else if (timeArray.indexOf(currentTime) < i) {
+          $(`#${i}`).addClass('future');
+          $(`#saveToDo-${i}`).addClass('future');
+          $(`#saveToDo-${i}`).prop('disabled', false);
+          $(`#hour-${i}`).addClass('future');
+        }
+      });
