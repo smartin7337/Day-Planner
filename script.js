@@ -13,7 +13,7 @@ $(document).ready(function(){
     })
     console.log(localTime);
     
-    /* array for the contents of each block */
+    /* if/else statements for contents of each block */
     $('.HourRow').each(function(i) {
         console.log(hourlyBlock.indexOf(localTime));
         if (hourlyBlock.indexOf(localTime) > i) {
